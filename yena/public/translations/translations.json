@@ -1,0 +1,40 @@
+{
+  "en": {
+    "login": {
+      "h1": "Sign up via Google",
+      "button": "Login"
+    },
+    "board": {
+      "left-menu": {
+        "menu-items": {
+          "dashboard": "Dashboard",
+          "profile": "Profile",
+          "projects": "Projects",
+          "users": "Users"
+        }
+      }
+    },
+    "profile": {
+
+    }
+  },
+  "ua": {
+    "login": {
+      "h1": "Авторизація за допомогою Google",
+      "button": "Увійти"
+    },
+    "board": {
+      "left-menu": {
+        "menu-items": {
+          "dashboard": "Дошка",
+          "profile": "Профіль",
+          "projects": "Проекти",
+          "users": "Користувачі"
+        }
+      }
+    },
+    "profile": {
+
+    }
+  }
+}
