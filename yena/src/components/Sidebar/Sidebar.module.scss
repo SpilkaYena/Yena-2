@@ -1,0 +1,46 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #fff;
+  color: #29303D;
+  z-index: 1000;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  border: 1px solid #E0E0E0;
+
+  .burgerMenu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  .logo {
+    display: block;
+    margin: 20px;
+  }
+
+  .nav {
+    margin-top: 60px;
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        margin: 20px 0;
+        a {
+          color: #29303D;
+          text-decoration: none;
+          font-size: 18px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from 'next/link';
 import { useLang } from '../hooks/useLang';
+import ".//globalStyles/globals.scss";
 
 
 export default function Home() {
