@@ -5,18 +5,17 @@
       "button": "Login"
     },
     "board": {
-      "left-menu": {
-        "menu-items": {
+      "sidebar": {
+        "menuItems": {
           "dashboard": "Dashboard",
-          "profile": "Profile",
-          "projects": "Projects",
-          "users": "Users"
+          "test": "Test",
+          "test2": "Test2",
+          "users": "Users",
+          "projects": "Projects"
         }
       }
     },
-    "profile": {
-
-    }
+    "profile": {}
   },
   "ua": {
     "login": {
@@ -24,17 +23,16 @@
       "button": "Увійти"
     },
     "board": {
-      "left-menu": {
-        "menu-items": {
+      "sidebar": {
+        "menuItems": {
           "dashboard": "Дошка",
-          "profile": "Профіль",
-          "projects": "Проекти",
-          "users": "Користувачі"
+          "test": "Тест",
+          "test2": "Тест2",
+          "users": "Користувачі",
+          "projects": "Проекти"
         }
       }
     },
-    "profile": {
-
-    }
+    "profile": {}
   }
 }
