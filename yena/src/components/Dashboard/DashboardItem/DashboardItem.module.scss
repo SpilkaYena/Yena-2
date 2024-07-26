@@ -1,1 +1,121 @@
 @import '../../../styles/variables';
+
+.dashboardContainer {
+  width: 100%;
+  box-sizing: border-box;
+  outline: 1px solid #EDEDED;
+}
+
+.dashboardItemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboardItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top: 1px solid #EDEDED;
+}
+
+.projectName,
+.projectDescription,
+.daysToComplete {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: auto;
+  padding: 25px;
+}
+
+.dashboardElement {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: auto;
+  padding: 25px 0;
+}
+
+
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: $font-weight-regular;
+}
+
+
+.done {
+  background-color: #EEFAF1;
+  color: #3DA353;
+}
+
+.inProgress {
+  background-color: #FAF5ED;
+  color: #BE8C50;
+}
+
+.readyToStart {
+  background-color: #b3e0f1;
+  color: #3a5694;
+}
+
+.searching {
+  background-color: #EDEDED;
+  color: #949792;
+}
+
+.users {
+  display: flex;
+  gap: 10px;
+}
+
+.userAvatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #EDEDED;
+}
+
+.stack {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 25px;
+  padding-left: 5px;
+
+  span {
+    width: 100px;
+    margin-left: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.stackCircle {
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  border: 3px solid #fff;
+  outline-offset: 5px;
+}
+
+.stack div:nth-child(1) {
+  left: 0;
+}
+
+.stack div:nth-child(2) {
+  left: 10px;
+}
+
+.stack div:nth-child(3) {
+  left: 20px;
+}

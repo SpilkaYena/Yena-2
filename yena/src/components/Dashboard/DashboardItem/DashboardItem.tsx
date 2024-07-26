@@ -1,23 +1,54 @@
 import React from 'react';
-import styles from '../Dashboard.module.scss';
+import styles from './DashboardItem.module.scss';
 
-const DashboardItem = ({ project }) => {
+import ProfilePicture from '../ProfilePicture/ProfilePicture';
+
+const DashboardItem = ({project}) => {
+    const getStatusClass = (status) => {
+        switch (status) {
+            case 'Done':
+                return styles.done;
+            case 'In progress':
+                return styles.inProgress;
+            case 'Ready to start':
+                return styles.readyToStart;
+            case 'Searching':
+                return styles.searching;
+            default:
+                return '';
+        }
+    };
+
     return (
         <div className={styles.dashboardItem}>
-            <h3 className={styles.projectName}>{project.name}</h3>
-            <p className={styles.projectDescription}>{project.description}</p>
-            <div className={styles.users}>
-                {project.users.slice(0, 3).map(user => (
-                    <img key={user.id} src={user.avatar} alt={user.name} className={styles.userAvatar} />
-                ))}
+            <div className={styles.projectName}>{project.name}</div>
+
+            <div className={styles.dashboardElement}>
+                <div className={`${styles.status} ${getStatusClass(project.status)}`}>
+                    {project.status}
+                </div>
             </div>
-            <p className={styles.daysToComplete}>{project.daysToComplete} днів на розробку</p>
-            <div className={styles.tags}>
+
+            <div className={styles.projectDescription}>{project.description}</div>
+
+            <div className={styles.dashboardElement}>
+                <div className={styles.users}>
+                    {project.users.slice(0, 3).map(user => (
+                        <ProfilePicture key={user.id} src={user.avatar} alt={user.name} className={styles.userAvatar}/>
+                    ))}
+                </div>
+            </div>
+
+            <div className={styles.daysToComplete}>{project.daysToComplete} днів</div>
+
+            <div className={styles.stack}>
                 {project.stack?.slice(0, 3).map((tag, index) => (
-                    <div key={index} className={styles.tagCircle}></div>
+                    <div key={index} className={styles.stackCircle}></div>
                 ))}
-                <span>Тестовий текст</span>
+                <span>Java, HTML, Pолтон, Мевена</span>
             </div>
+
+            <br/>
         </div>
     );
 };
