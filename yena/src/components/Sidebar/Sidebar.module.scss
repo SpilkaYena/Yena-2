@@ -1,6 +1,8 @@
 @import '../../styles/variables';
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
@@ -44,6 +46,7 @@
   .nav {
     outline: 1px solid #EDEDED;
     box-sizing: border-box;
+    flex-grow: 1;
 
     ul {
       list-style: none;
@@ -83,73 +86,6 @@
   .textHidden {
     opacity: 0;
   }
-
-  .projects {
-    padding: 0;
-    background-color: #fff;
-    border-top: 1px solid #EDEDED;
-    box-sizing: border-box;
-
-    .header {
-      font-size: 1rem;
-      color: #29303D;
-      padding: 25px;
-      border-bottom: 1px solid #EDEDED;
-      margin: 0;
-    }
-
-    .projectList {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      a {
-        display: flex;
-        align-items: center;
-        color: #29303D;
-        text-decoration: none;
-        padding: 25px;
-        box-sizing: border-box;
-        transition: background-color 0.3s ease;
-
-        .indicator {
-          width: 15px;
-          height: 15px;
-          border-radius: 50%;
-          background-color: #4CAF50;
-          margin-right: 30px;
-          margin-left: 5px;
-          transition: opacity 0.3s ease; // Add transition for smooth appearance
-        }
-
-        .projectName {
-          font-size: 1rem;
-          color: #29303D;
-        }
-      }
-      .projectItem {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        cursor: pointer;
-      }
-
-      .indicator {
-        width: 5px;
-        height: 100%;
-        background-color: #3498db;
-        margin-right: 10px;
-      }
-
-      .projectName {
-        font-size: 16px;
-        color: #333;
-        transition: opacity 0.3s ease;
-      }
-
-      .textHidden {
-        opacity: 0;
-      }
-    }
-  }
 }
+
+

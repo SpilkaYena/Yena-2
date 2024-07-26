@@ -1,0 +1,71 @@
+@import '../../styles/variables';
+
+.dashboardContainer {
+  width: 100%;
+  padding: 0 320px;
+  box-sizing: border-box;
+}
+
+.dashboardItemsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  outline: 1px solid #EDEDED;
+}
+
+.dashboardItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 20px;
+  border-bottom: 1px solid #EDEDED;
+  background-color: #fff;
+  border-radius: 10px;
+
+}
+
+.projectName {
+  flex: 1;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.projectDescription {
+  flex: 2;
+  font-size: 1em;
+}
+
+.users {
+  display: flex;
+  gap: 10px;
+  flex: 3;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.daysToComplete {
+  flex: 1;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 2;
+}
+
+.tagCircle {
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 50%;
+}

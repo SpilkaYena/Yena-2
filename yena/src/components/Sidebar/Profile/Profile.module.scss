@@ -1,0 +1,48 @@
+@import '../../../styles/variables';
+
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 25px 15px;
+  box-sizing: border-box;
+  border-top: 1px solid #EDEDED;
+
+  .imageWrapper {
+    flex: 0 0 auto;
+
+    .image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .textWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    overflow: hidden;
+    margin-left: 15px;
+    height: 100%;
+
+    .name {
+      font-size: 1rem;
+      color: #29303D;
+      white-space: nowrap;
+      padding-bottom: 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .description {
+      font-size: 0.875rem;
+      color: #777;
+      margin: 5px 0 0 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

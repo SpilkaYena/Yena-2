@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import styles from '../Sidebar.module.scss';
+import styles from './Projects.module.scss';
 
 interface Project {
     id: number;

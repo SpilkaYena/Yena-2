@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLang } from '@/hooks/useLang'; // Make sure the path is correct
-import styles from './Sidebar.module.scss';
+import { useLang } from '@/hooks/useLang';
+
+import MenuItems from './MenuItems/MenuItems';
+import Projects from './Projects/Projects';
+import Profile from './Profile/Profile';
+
+import ProfileUrl from '@/../public/img/profile-img.png';
 import BurgerMenuIcon from '../../../public/img/burger-menu.svg';
 import Logo from '../../../public/img/logo.svg';
-import DashboardIcon from '../../../public/img/dashboard.svg';
-import UsersIcon from '../../../public/img/users.svg';
+import DashboardIcon from '../../../public/img/dashboard-icon.svg';
+import UsersIcon from '../../../public/img/users-icon.svg';
 import TestIcon from '../../../public/img/test.svg';
 import Test2Icon from '../../../public/img/test2.svg';
-import MenuItems from './MenuItems/MenuItems';
-import Projects from './Projects/Projects'; // Import Projects component
+
+import styles from './Sidebar.module.scss';
+
 
 const Sidebar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -59,8 +65,13 @@ const Sidebar: React.FC = () => {
                 </div>
                 <nav className={styles.nav}>
                     <MenuItems items={menuItems} isOpen={isOpen} />
+                    <Projects isOpen={isOpen} />
                 </nav>
-                <Projects isOpen={isOpen} />
+                <Profile
+                    name="Wassup Wassupпович"
+                    description="Криптоинвестор і ще шось"
+                    imageUrl= {ProfileUrl.src}
+                />
             </motion.aside>
         </div>
     );
