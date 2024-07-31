@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DashboardItem from './DashboardItem/DashboardItem';
 import FilterBar from './FilterBar/FilterBar';
-import { projectsData } from './projectsData';
+import { projectsData } from '@/data/projectsData';
 import styles from './Dashboard.module.scss';
 
 const Dashboard = () => {

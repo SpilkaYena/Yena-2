@@ -1,0 +1,37 @@
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  box-sizing: border-box;
+
+  div {
+    width: 25px;
+    height: 25px;
+  }
+
+  img {
+    height: 25px;
+  }
+
+
+  .burgerMenu {
+    height: 25px;
+    position: absolute;
+    right: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .logo {
+    display: block;
+    width: 75px;
+  }
+}
+
+
+.textHidden {
+  display: none;
+}

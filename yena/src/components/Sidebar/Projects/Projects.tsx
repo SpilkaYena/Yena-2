@@ -1,60 +1,58 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
 import styles from './Projects.module.scss';
+import { ArrowDown2 } from 'iconic-react';
 
 interface Project {
     id: number;
     name: string;
+    color: string;
 }
 
-interface ProjectItemProps {
-    project: Project;
+interface ProjectsProps {
     isOpen: boolean;
+    projects: Project[];
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ project, isOpen }) => {
-    return (
+const Projects: React.FC<ProjectsProps> = ({ isOpen, projects }) => {
+    const [isProjectsVisible, setProjectsVisible] = useState(true);
+
+    const toggleProjectsVisibility = () => {
+        setProjectsVisible(!isProjectsVisible);
+    };
+
+    const ProjectItem: React.FC<{ project: Project; isOpen: boolean }> = ({ project, isOpen }) => (
         <li className={styles.projectItem}>
             <a>
-                <div className={styles.indicator}></div>
+                <div>
+                    <div className={styles.indicator} style={{ backgroundColor: project.color }}></div>
+                </div>
                 <span className={`${styles.projectName} ${!isOpen ? styles.textHidden : ''}`}>
                     {project.name}
                 </span>
             </a>
         </li>
     );
-};
 
-const placeholderProjects: Project[] = [
-    { id: 1, name: 'Project A' },
-    { id: 2, name: 'Project B' },
-    { id: 3, name: 'Project C' },
-];
-
-const Projects: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
     return (
-        <AnimatePresence>
-            {isOpen && (
-                <motion.div
-                    className={styles.projects}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+        <div className={styles.projects}>
+            <div className={styles.header}>
+                <div
+                    className={`${styles.icon} ${!isProjectsVisible ? styles.rotated : ''}`}
+                    onClick={toggleProjectsVisibility}
                 >
-                    <h2 className={styles.header}>Projects</h2>
-                    <ul className={styles.projectList}>
-                        {placeholderProjects.map(project => (
-                            <ProjectItem
-                                key={project.id}
-                                project={project}
-                                isOpen={isOpen}
-                            />
-                        ))}
-                    </ul>
-                </motion.div>
+                    <ArrowDown2 />
+                </div>
+                <h2 className={`${!isOpen ? styles.textHidden : ''}`}>Projects</h2>
+            </div>
+
+            {isProjectsVisible && (
+                <ul className={styles.projectList}>
+                    {projects.map((project) => (
+                        <ProjectItem key={project.id} project={project} isOpen={isOpen} />
+                    ))}
+                </ul>
             )}
-        </AnimatePresence>
+        </div>
     );
 };
 

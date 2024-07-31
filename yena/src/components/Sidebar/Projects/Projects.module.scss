@@ -3,15 +3,31 @@
 .projects {
   padding: 0;
   background-color: #fff;
-  border-top: 1px solid #EDEDED;
   box-sizing: border-box;
 
   .header {
-    font-size: 1rem;
-    color: #29303D;
+    display: flex;
+    align-items: center;
     padding: 25px;
     border-bottom: 1px solid #EDEDED;
-    margin: 0;
+
+    h2 {
+      color: #29303D;
+      font-size: 1rem;
+      padding-left: 25px;
+    }
+
+    .icon {
+      width: 25px;
+      height: 25px;
+      color: gray;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .rotated {
+      transform: rotate(180deg);
+    }
   }
 
   .projectList {
@@ -22,46 +38,40 @@
     a {
       display: flex;
       align-items: center;
-      color: #29303D;
       text-decoration: none;
       padding: 25px;
       box-sizing: border-box;
-      transition: background-color 0.3s ease;
 
-      .indicator {
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        background-color: #4CAF50;
-        margin-right: 30px;
-        margin-left: 5px;
-        transition: opacity 0.3s ease;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+
+        .indicator {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+        }
       }
 
       .projectName {
         font-size: 1rem;
-        color: #29303D;
+        color: #333;
+        padding-left: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
+
     .projectItem {
       cursor: pointer;
     }
-
-    .indicator {
-      width: 5px;
-      height: 100%;
-      background-color: #3498db;
-      margin-right: 10px;
-    }
-
-    .projectName {
-      font-size: 16px;
-      color: #333;
-      transition: opacity 0.3s ease;
-    }
-
-    .textHidden {
-      opacity: 0;
-    }
   }
+}
+
+.textHidden {
+  display: none;
 }

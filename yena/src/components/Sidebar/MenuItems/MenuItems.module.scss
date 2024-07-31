@@ -1,0 +1,35 @@
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  a {
+    display: flex;
+    align-items: center;
+    color: #29303D;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 25px;
+    box-sizing: border-box;
+
+    .text {
+      padding-left: 25px;
+    }
+
+    .icon {
+      width: 25px;
+      height: 25px;
+      color: gray;
+    }
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+}
+
+.textHidden {
+  display: none;
+}

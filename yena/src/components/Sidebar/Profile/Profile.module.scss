@@ -7,17 +7,6 @@
   box-sizing: border-box;
   border-top: 1px solid #EDEDED;
 
-  .imageWrapper {
-    flex: 0 0 auto;
-
-    .image {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-  }
-
   .textWrapper {
     display: flex;
     flex-direction: column;
@@ -27,22 +16,63 @@
     margin-left: 15px;
     height: 100%;
 
+
     .name {
       font-size: 1rem;
       color: #29303D;
       white-space: nowrap;
-      padding-bottom: 5px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .description {
+    .status {
       font-size: 0.875rem;
       color: #777;
-      margin: 5px 0 0 0;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
   }
+
+  .imageWrapper {
+    position: relative;
+    flex: 0 0 auto;
+
+    .image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .statusIndicator {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      outline: 2px solid #fff;
+
+      &.Online {
+        background-color: #3DA353;
+      }
+
+      &.Away {
+        background-color: #de8a38;
+      }
+
+      &.Busy {
+        background-color: #de3838;
+      }
+
+      &.Offline {
+        background-color: #7a7a7a;
+      }
+    }
+  }
+}
+
+.textHidden {
+  display: none;
 }
