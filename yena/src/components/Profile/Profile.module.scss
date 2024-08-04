@@ -1,0 +1,62 @@
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 25px 25px 325px;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid #EDEDED;
+  border-radius: 10px;
+
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 25px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 25px;
+
+  .listWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 25px;
+
+  .editButton, .cancelButton, .updateButton {
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #000;
+    width: 50%;
+  }
+
+  .editButton {
+    background-color: #fff;
+  }
+
+  .cancelButton {
+    background-color: #fff;
+  }
+
+  .updateButton {
+    background-color: #000;
+    color: #fff;
+  }
+}

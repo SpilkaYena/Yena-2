@@ -6,6 +6,7 @@ export const users = [
         name: "Иван",
         surname: "Иванов",
         birthDate: "1990-05-12",
+        email: "example@gmail.com",
         profilePicture: ProfilePicture,
         socialLinks: {
             telegram: "https://t.me/ivan_ivanov",
@@ -30,6 +31,7 @@ export const users = [
         name: "Анна",
         surname: "Смирнова",
         birthDate: "1992-08-25",
+        email: "example@gmail.com",
         profilePicture: "/images/anna-smirnova.jpg",
         socialLinks: {
             telegram: "https://t.me/anna_smirnova",
@@ -54,6 +56,7 @@ export const users = [
         name: "Петр",
         surname: "Петров",
         birthDate: "1988-11-30",
+        email: "example@gmail.com",
         profilePicture: "/images/petr-petrov.jpg",
         socialLinks: {
             telegram: "https://t.me/petr_petrov",

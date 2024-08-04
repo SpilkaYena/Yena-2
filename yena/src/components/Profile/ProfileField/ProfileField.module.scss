@@ -1,0 +1,33 @@
+.profileField {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+
+  &.large {
+    .input, .value {
+      white-space: pre-wrap;
+      height: 200px;
+    }
+  }
+
+  .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+
+  .value {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 16px;
+    white-space: pre-wrap;
+  }
+}

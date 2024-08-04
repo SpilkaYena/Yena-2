@@ -1,8 +1,13 @@
-import Sidebar2 from '@/components/Sidebar/Sidebar';
+'use client'
+
+
+import Sidebar from '@/components/Sidebar/Sidebar';
+import Profile from '@/components/Profile/Profile';
 export default function About() {
     return (
         <>
-            <div> Profile page</div>
+            <Sidebar/>
+            <Profile userId={2} />
         </>
     );
 }

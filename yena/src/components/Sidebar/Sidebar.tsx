@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLang } from '@/hooks/useLang';
@@ -12,7 +14,7 @@ import styles from './Sidebar.module.scss';
 import { users } from '@/data/usersData';
 import { projectsData } from '@/data/projectsData';
 
-const selectedUserId = 1;
+const selectedUserId = 3;
 
 const Sidebar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
