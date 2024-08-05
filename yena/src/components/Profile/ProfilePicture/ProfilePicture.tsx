@@ -2,18 +2,23 @@
 
 import React from 'react';
 import styles from './ProfilePicture.module.scss';
+import { Trash, Image } from 'iconic-react';
 
 interface ProfilePictureProps {
     imageUrl: string;
-    isEditing: boolean;
-    onChange: (url: string) => void;
 }
 
-const ProfilePicture: React.FC<ProfilePictureProps> = ({ imageUrl, isEditing, onChange }) => {
-    const handleImageChange = () => {
-        const newUrl = prompt("Enter new image URL:", imageUrl);
-        if (newUrl) {
-            onChange(newUrl);
+const ProfilePicture: React.FC<ProfilePictureProps> = ({ imageUrl, onChange }) => {
+    const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                if (reader.result) {
+                    onChange(reader.result as string);
+                }
+            };
+            reader.readAsDataURL(file);
         }
     };
 
@@ -24,12 +29,19 @@ const ProfilePicture: React.FC<ProfilePictureProps> = ({ imageUrl, isEditing, on
     return (
         <div className={styles.profilePicture}>
             <img src={imageUrl} alt="Profile" className={styles.image} />
-            {isEditing && (
-                <div className={styles.buttons}>
-                    <button className={styles.changeButton} onClick={handleImageChange}>Change</button>
-                    <button className={styles.removeButton} onClick={handleImageRemove}>Remove</button>
-                </div>
-            )}
+            <div className={styles.buttons}>
+                <label htmlFor="fileInput" className={styles.fileLabel}>
+                    <Image /> Change
+                    <input
+                        type="file"
+                        id="fileInput"
+                        className={styles.fileInput}
+                        onChange={handleImageChange}
+                        accept="image/*"
+                    />
+                </label>
+                <button onClick={handleImageRemove}><Trash /> Remove</button>
+            </div>
         </div>
     );
 };

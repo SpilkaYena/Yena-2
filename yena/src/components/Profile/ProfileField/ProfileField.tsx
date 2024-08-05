@@ -8,12 +8,11 @@ interface ProfileFieldProps {
     value: string;
     isEditing: boolean;
     onChange: (value: string) => void;
-    isLarge?: boolean;
 }
 
-const ProfileField: React.FC<ProfileFieldProps> = ({ label, value, isEditing, onChange, isLarge }) => {
+const ProfileField: React.FC<ProfileFieldProps> = ({ label, value, isEditing, onChange }) => {
     return (
-        <div className={`${styles.profileField} ${isLarge ? styles.large : ''}`}>
+        <div className={styles.profileField}>
             <label className={styles.label}>{label}</label>
             {isEditing ? (
                 <input

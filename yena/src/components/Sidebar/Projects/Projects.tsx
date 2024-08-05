@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Projects.module.scss';
 import { ArrowDown2 } from 'iconic-react';
+import { motion } from 'framer-motion';
 
 interface Project {
     id: number;
@@ -36,13 +37,17 @@ const Projects: React.FC<ProjectsProps> = ({ isOpen, projects }) => {
     return (
         <div className={styles.projects}>
             <div className={styles.header}>
-                <div
+                <motion.div
                     className={`${styles.icon} ${!isProjectsVisible ? styles.rotated : ''}`}
                     onClick={toggleProjectsVisibility}
                 >
                     <ArrowDown2 />
-                </div>
-                <h2 className={`${!isOpen ? styles.textHidden : ''}`}>Projects</h2>
+                </motion.div>
+                <motion.h2
+                    className={`${!isOpen ? styles.textHidden : ''}`}
+                    initial={{opacity: 0, x: -20}}
+                    animate={{opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20}}
+                    transition={{duration: 0.3, delay: 0.3, ease: 'easeInOut'}}>Projects</motion.h2>
             </div>
 
             {isProjectsVisible && (

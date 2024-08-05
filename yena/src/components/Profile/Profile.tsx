@@ -1,7 +1,10 @@
+'use client'
+
 import React, { useState } from 'react';
 import { users } from '@/data/usersData';
 import ProfilePicture from './ProfilePicture/ProfilePicture';
 import ProfileField from './ProfileField/ProfileField';
+import ProfileDescriptionField from './ProfileDescriptionField/ProfileDescriptionField';
 import EditableList from './EditableList/EditableList';
 import styles from './Profile.module.scss';
 
@@ -15,11 +18,10 @@ const Profile: React.FC<ProfileProps> = ({ userId }) => {
     const [formData, setFormData] = useState<any>(user || {});
 
     const handleInputChange = (field: string, value: string) => {
-        setFormData((prevData: any) => ({ ...prevData, [field]: value }));
+        setFormData(prevData => ({ ...prevData, [field]: value }));
     };
 
     const handleUpdate = () => {
-        // Логіка оновлення даних користувача
         console.log('User updated:', formData);
         setIsEditing(false);
     };
@@ -32,31 +34,16 @@ const Profile: React.FC<ProfileProps> = ({ userId }) => {
         <div className={styles.profileWrapper}>
             <div className={styles.profile}>
                 <div className={styles.left}>
-                    <ProfilePicture src={user.profilePicture} alt={user.name}/>
-                    <ProfileField
-                        label="Name"
-                        value={formData.name}
-                        isEditing={isEditing}
-                        onChange={(value) => handleInputChange('name', value)}
-                    />
-                    <ProfileField
-                        label="Surname"
-                        value={formData.surname}
-                        isEditing={isEditing}
-                        onChange={(value) => handleInputChange('surname', value)}
-                    />
-                    <ProfileField
-                        label="Date of Birth"
-                        value={formData.birthDate}
-                        isEditing={isEditing}
-                        onChange={(value) => handleInputChange('birthDate', value)}
-                    />
-                    <ProfileField
-                        label="Email"
-                        value={formData.email}
-                        isEditing={isEditing}
-                        onChange={(value) => handleInputChange('email', value)}
-                    />
+                    <ProfilePicture imageUrl={user.profilePicture} alt={user.name} />
+                    {['name', 'surname', 'birthDate', 'email'].map(field => (
+                        <ProfileField
+                            key={field}
+                            label={field.charAt(0).toUpperCase() + field.slice(1)}
+                            value={formData[field]}
+                            isEditing={isEditing}
+                            onChange={(value) => handleInputChange(field, value)}
+                        />
+                    ))}
                     <div className={styles.actions}>
                         {isEditing ? (
                             <>
@@ -75,12 +62,12 @@ const Profile: React.FC<ProfileProps> = ({ userId }) => {
                         isEditing={isEditing}
                         onChange={(value) => handleInputChange('status', value)}
                     />
-                    <ProfileField
+                    <ProfileDescriptionField
                         label="Description"
                         value={formData.description}
                         isEditing={isEditing}
                         onChange={(value) => handleInputChange('description', value)}
-                        isLarge
+                        maxWords={100}
                     />
                     <div className={styles.listWrapper}>
                         <EditableList
@@ -99,9 +86,7 @@ const Profile: React.FC<ProfileProps> = ({ userId }) => {
                 </div>
             </div>
         </div>
-
-    )
-        ;
+    );
 };
 
 export default Profile;

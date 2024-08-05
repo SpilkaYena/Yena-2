@@ -1,16 +1,5 @@
-.profileField {
+.profileDescription {
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-
-  &.large {
-    .input, .value {
-      white-space: pre-wrap;
-      height: 150px;
-    }
-  }
 
   .label {
     display: block;
@@ -18,9 +7,16 @@
     font-weight: bold;
   }
 
-  .input {
+  textarea {
     width: 100%;
-    padding: 10px;
+    line-height: 1.5;
+    resize: none;
+    background-color: #fff;
+  }
+
+  .textareaEditing {
+    width: 100%;
+    padding: 15px;
     border: 1px solid #000;
     border-radius: 4px;
     font-size: 16px;

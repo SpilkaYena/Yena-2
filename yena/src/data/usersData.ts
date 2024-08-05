@@ -1,4 +1,3 @@
-import ProfilePicture from '../../public/img/profile-img.png';
 
 export const users = [
     {
@@ -7,7 +6,7 @@ export const users = [
         surname: "Иванов",
         birthDate: "1990-05-12",
         email: "example@gmail.com",
-        profilePicture: ProfilePicture,
+        profilePicture: "@/../public/img/profile-img.png",
         socialLinks: {
             telegram: "https://t.me/ivan_ivanov",
             github: "https://github.com/ivan-ivanov",
@@ -75,8 +74,6 @@ export const users = [
             { id: 4 },
             { id: 5 },
             { id: 10 },
-            { id: 7 },
-            { id: 6 }
         ]
     }
 ];

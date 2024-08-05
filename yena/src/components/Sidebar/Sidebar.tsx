@@ -17,7 +17,7 @@ import { projectsData } from '@/data/projectsData';
 const selectedUserId = 3;
 
 const Sidebar: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const { lang, translations } = useLang();
 
     const currentUser = users.find(user => user.id === selectedUserId);
@@ -37,7 +37,7 @@ const Sidebar: React.FC = () => {
             className={styles.sidebar}
             initial={{ width: 75 }}
             animate={{ width: isOpen ? 300 : 75 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             style={{ overflow: 'hidden' }}
         >
             <Header isOpen={isOpen} onToggleSidebar={toggleSidebar} />

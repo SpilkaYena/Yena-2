@@ -7,7 +7,7 @@ export default function About() {
     return (
         <>
             <Sidebar/>
-            <Profile userId={2} />
+            <Profile userId={1} />
         </>
     );
 }
