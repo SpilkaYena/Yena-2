@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLang } from '@/hooks/useLang';
+import { useSession, signOut } from "next-auth/react";
 
 import MenuItems from './MenuItems/MenuItems';
 import Projects from './Projects/Projects';
@@ -19,6 +20,8 @@ const selectedUserId = 3;
 const Sidebar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(true);
     const { lang, translations } = useLang();
+
+    const session = useSession();
 
     const currentUser = users.find(user => user.id === selectedUserId);
 
@@ -46,9 +49,9 @@ const Sidebar: React.FC = () => {
                 <Projects isOpen={isOpen} projects={userProjects} />
             </nav>
             <Profile
-                name={currentUser.name}
+                name={session?.data?.user?.name}
                 status={currentUser.status}
-                imageUrl={currentUser.profilePicture}
+                imageUrl={session?.data?.user?.image}
                 userStatus={currentUser.userStatus}
                 isOpen={isOpen}
             />
