@@ -1,11 +1,12 @@
-'use client'
-
 import React, { useState } from 'react';
 import { users } from '@/data/usersData';
+
 import ProfilePicture from './ProfilePicture/ProfilePicture';
 import ProfileField from './ProfileField/ProfileField';
 import ProfileDescriptionField from './ProfileDescriptionField/ProfileDescriptionField';
 import EditableList from './EditableList/EditableList';
+import Button from '../Button/Button';
+
 import styles from './Profile.module.scss';
 
 interface ProfileProps {
@@ -47,11 +48,11 @@ const Profile: React.FC<ProfileProps> = ({ userId }) => {
                     <div className={styles.actions}>
                         {isEditing ? (
                             <>
-                                <button className={styles.cancelButton} onClick={() => setIsEditing(false)}>Cancel</button>
-                                <button className={styles.updateButton} onClick={handleUpdate}>Update</button>
+                                <Button variant="outlined" onClick={() => setIsEditing(false)}>Cancel</Button>
+                                <Button variant="filled" onClick={handleUpdate}>Update</Button>
                             </>
                         ) : (
-                            <button className={styles.editButton} onClick={() => setIsEditing(true)}>Edit</button>
+                            <Button variant="filled" onClick={() => setIsEditing(true)}>Edit</Button>
                         )}
                     </div>
                 </div>

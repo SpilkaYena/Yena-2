@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { FaTrash, FaCheck, FaPlus } from 'react-icons/fa';
+
 import styles from './EditableList.module.scss';
 
 import { Trash, Add, Like1 } from 'iconic-react';

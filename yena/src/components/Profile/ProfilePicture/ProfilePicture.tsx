@@ -1,8 +1,11 @@
 'use client'
 
 import React from 'react';
-import styles from './ProfilePicture.module.scss';
+
 import { Trash, Image } from 'iconic-react';
+
+import styles from './ProfilePicture.module.scss';
+
 
 interface ProfilePictureProps {
     imageUrl: string;

@@ -3,19 +3,18 @@
 .profile {
   display: flex;
   align-items: center;
-  padding: 25px 15px;
   box-sizing: border-box;
   border-top: 1px solid #EDEDED;
+  padding-left: 20px;
 
   .textWrapper {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     flex: 1;
     overflow: hidden;
-    margin-left: 15px;
     height: 100%;
-
 
     .name {
       font-size: 1rem;
@@ -71,8 +70,47 @@
       }
     }
   }
+
+  .profileExitWrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 15px;
+    border-left: 1px solid #EDEDED;
+
+    .logoutButton {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #000;
+
+    }
+  }
+
+  .profileEnterWrapper {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .loginButton {
+      display: flex;
+      align-items: center;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+  }
 }
 
 .textHidden {
   display: none;
+  opacity: 0;
 }
