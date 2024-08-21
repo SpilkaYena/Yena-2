@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+'use client'
+
+import React, { useState, useEffect } from 'react';
 import DashboardItem from './DashboardItem/DashboardItem';
 import FilterBar from './FilterBar/FilterBar';
 import { projectsData } from '@/data/projectsData';
 import styles from './Dashboard.module.scss';
 
-const Dashboard = () => {
+const Dashboard: React.FC<{ sidebarWidth: number }> = () => {
     const [filteredData, setFilteredData] = useState(projectsData);
+
 
     const handleFilter = (searchText) => {
         const lowerCaseSearchText = searchText.toLowerCase();

@@ -8,7 +8,6 @@
     display: flex;
     align-items: center;
     padding: 25px;
-    border-bottom: 1px solid #EDEDED;
 
     h2 {
       color: #000;
@@ -24,12 +23,18 @@
       transition: transform 0.3s ease;
     }
 
+    &:hover {
+      background-color: #f0f0f0;
+    }
+
     .rotated {
       transform: rotate(180deg);
     }
   }
 
   .projectList {
+    border-top: 1px solid #EDEDED;
+
     list-style: none;
     padding: 0;
     margin: 0;
@@ -69,6 +74,10 @@
 
     .projectItem {
       cursor: pointer;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
     }
   }
 }

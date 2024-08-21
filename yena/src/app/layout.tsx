@@ -1,16 +1,22 @@
-import ".//globalStyles/globals.scss";
+'use client'
+
+import "./globalStyles/globals.scss";
 import { Providers } from "@/components/Providers";
+
 
 export default function RootLayout({
                                        children,
-                                   }: Readonly<{
+                                   }: {
     children: React.ReactNode;
-}>) {
+}) {
+
     return (
-        <Providers>
             <html lang="en">
-            <body>{children}</body>
+                <body>
+                    <Providers>
+                        {children}
+                    </Providers>
+                </body>
             </html>
-        </Providers>
     );
 }

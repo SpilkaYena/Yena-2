@@ -5,7 +5,7 @@
   align-items: center;
   box-sizing: border-box;
   border-top: 1px solid #EDEDED;
-  padding-left: 20px;
+  padding: 10px;
 
   .textWrapper {
     padding: 20px;
@@ -111,6 +111,5 @@
 }
 
 .textHidden {
-  display: none;
   opacity: 0;
 }

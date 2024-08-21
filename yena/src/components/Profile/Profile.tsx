@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
-import { users } from '@/data/usersData';
-
 import ProfilePicture from './ProfilePicture/ProfilePicture';
 import ProfileField from './ProfileField/ProfileField';
 import ProfileDescriptionField from './ProfileDescriptionField/ProfileDescriptionField';
 import EditableList from './EditableList/EditableList';
 import Button from '../Button/Button';
-
+import { users } from '@/data/usersData';
 import styles from './Profile.module.scss';
+
+interface User {
+    id: number;
+    name: string;
+    surname: string;
+    birthDate: string;
+    email: string;
+    profilePicture: string;
+    status: string;
+    description: string;
+    stacks: string[];
+    skills: string[];
+}
 
 interface ProfileProps {
     userId: number;
@@ -16,7 +27,7 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ userId }) => {
     const user = users.find(user => user.id === userId);
     const [isEditing, setIsEditing] = useState(false);
-    const [formData, setFormData] = useState<any>(user || {});
+    const [formData, setFormData] = useState<User | any>(user || {});
 
     const handleInputChange = (field: string, value: string) => {
         setFormData(prevData => ({ ...prevData, [field]: value }));

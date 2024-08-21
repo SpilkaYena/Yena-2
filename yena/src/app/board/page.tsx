@@ -1,15 +1,23 @@
-"use client";
+'use client'
 
+import React, { useState } from 'react';
 
+import dynamic from "next/dynamic";
 import Sidebar from '@/components/Sidebar/Sidebar';
-import Dashboard from '@/components/Dashboard/Dashboard';
+import LoadingAnimation from "@/components/LoadingAnimation/LoadingAnimation";
+import Dashboard from "@/components/Dashboard/Dashboard";
 
+import styles from './page.module.scss';
 
-export default function About() {
+const DashboardComponent = dynamic(() => import('@/components/Dashboard/Dashboard'), {
+    loading: () => <LoadingAnimation />,
+});
+
+export default function BoardPage() {
     return (
-        <>
+        <div className={styles.boardPageContainer}>
             <Sidebar/>
             <Dashboard/>
-        </>
+        </div>
     );
 }

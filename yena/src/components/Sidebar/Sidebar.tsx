@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLang } from '@/hooks/useLang';
 import { useSession, signOut } from "next-auth/react";
@@ -15,12 +15,11 @@ import styles from './Sidebar.module.scss';
 import { users } from '@/data/usersData';
 import { projectsData } from '@/data/projectsData';
 
-const selectedUserId = 3;
+const selectedUserId = 1;
 
 const Sidebar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(true);
     const { lang, translations } = useLang();
-
     const session = useSession();
 
     const currentUser = users.find(user => user.id === selectedUserId);
@@ -35,10 +34,14 @@ const Sidebar: React.FC = () => {
 
     const toggleSidebar = () => setIsOpen(!isOpen);
 
+    useEffect(() => {
+        document.documentElement.style.setProperty('--sidebar-width', isOpen ? '300px' : '75px');
+    }, [isOpen]);
+
     return (
         <motion.aside
             className={styles.sidebar}
-            initial={{ width: 75 }}
+            initial={{ width: 300 }}
             animate={{ width: isOpen ? 300 : 75 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             style={{ overflow: 'hidden' }}

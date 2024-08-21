@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <Providers>
-            <>{children}</>
+            {children}
         </Providers>
     );
 }

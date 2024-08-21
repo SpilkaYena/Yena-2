@@ -1,9 +1,10 @@
 @import '../../styles/variables';
 
 .dashboardContainer {
-  width: 100%;
-  padding: 200px 25px 0 325px;
+  width: $width;
+  padding: 25px;
   box-sizing: border-box;
+  transition: width 0.5s ease-out;
 }
 
 .dashboardItemsContainer {
@@ -24,7 +25,6 @@
   border-bottom: 1px solid #EDEDED;
   background-color: #fff;
   border-radius: 10px;
-
 }
 
 .projectName {

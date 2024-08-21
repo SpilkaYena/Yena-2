@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './Projects.module.scss';
 import { ArrowDown2 } from 'iconic-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 interface Project {
     id: number;
@@ -22,33 +23,45 @@ const Projects: React.FC<ProjectsProps> = ({ isOpen, projects }) => {
     };
 
     const ProjectItem: React.FC<{ project: Project; isOpen: boolean }> = ({ project, isOpen }) => (
-        <li className={styles.projectItem}>
-            <a>
+        <motion.li
+            className={styles.projectItem}
+            whileTap={{scale: 0.9}}
+            transition={{type: 'spring', stiffness: 400, damping: 15}}
+        >
+            <Link href={`/projects/${project.id}`} passHref>
                 <div>
                     <div className={styles.indicator} style={{ backgroundColor: project.color }}></div>
                 </div>
                 <span className={`${styles.projectName} ${!isOpen ? styles.textHidden : ''}`}>
                     {project.name}
                 </span>
-            </a>
-        </li>
+            </Link>
+        </motion.li>
     );
 
     return (
         <div className={styles.projects}>
-            <div className={styles.header}>
+            <motion.div
+                className={styles.header}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+                onClick={toggleProjectsVisibility}
+            >
                 <motion.div
                     className={`${styles.icon} ${!isProjectsVisible ? styles.rotated : ''}`}
-                    onClick={toggleProjectsVisibility}
                 >
                     <ArrowDown2 />
                 </motion.div>
                 <motion.h2
                     className={`${!isOpen ? styles.textHidden : ''}`}
-                    initial={{opacity: 0, x: -20}}
-                    animate={{opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20}}
-                    transition={{duration: 0.3, delay: 0.3, ease: 'easeInOut'}}>Projects</motion.h2>
-            </div>
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20 }}
+                    transition={{ duration: 0.3, delay: 0.3, ease: 'easeInOut' }}
+                >
+                    Projects
+                </motion.h2>
+            </motion.div>
 
             {isProjectsVisible && (
                 <ul className={styles.projectList}>

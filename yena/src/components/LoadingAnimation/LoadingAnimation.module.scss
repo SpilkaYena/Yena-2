@@ -1,0 +1,18 @@
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.loadingText {
+  font-size: 1.25rem;
+  color: #000000;
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

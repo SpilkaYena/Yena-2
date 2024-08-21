@@ -1,4 +1,6 @@
 @import '../../styles/variables';
-@import '../globalStyles/globals';
 
-
+.boardPageContainer {
+  display: flex;
+  justify-content: end;
+}

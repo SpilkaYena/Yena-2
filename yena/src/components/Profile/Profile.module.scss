@@ -1,15 +1,19 @@
+@import '@/styles/variables';
+
 .profileWrapper {
   display: flex;
-  flex-direction: column;
-  padding: 25px 25px 25px 325px;
+  width: 100%;
+  justify-content: end;
+  padding: 25px;
 }
 
 .profile {
   display: flex;
-  justify-content: space-between;
   background-color: white;
   border: 1px solid #EDEDED;
   border-radius: 10px;
+  width: $width;
+  transition: all 0.5s ease-out;
 }
 
 .left {
@@ -34,9 +38,12 @@
 
 .actions {
   display: flex;
+  margin: auto;
   justify-content: space-between;
   width: 100%;
   gap: 25px;
+  max-width: 300px;
+
 
   .editButton, .cancelButton, .updateButton {
     padding: 15px 20px;
