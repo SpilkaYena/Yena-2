@@ -2,44 +2,48 @@
 
 .project {
   width: $width;
-  transition: all 0.5s ease-out;
+  height: 95vh;
   padding: 20px;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: all 0.5s ease-out;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-
-    h1 {
-      margin: 0;
-    }
 
     .status {
-      display: inline-block;
       padding: 5px 10px;
       border-radius: 5px;
       font-size: 1rem;
-      font-weight: $font-weight-regular;
 
       &.done {
         background-color: #EEFAF1;
         color: #3DA353;
       }
-
-      &.inProgress {
+      &.inprogress {
         background-color: #FAF5ED;
         color: #BE8C50;
       }
-
-      &.readyToStart {
+      &.readytostart {
         background-color: #b3e0f1;
         color: #3a5694;
       }
-
       &.searching {
         background-color: #EDEDED;
         color: #949792;
@@ -47,19 +51,30 @@
     }
   }
 
-  .users {
-    margin-bottom: 20px;
+  .mainContent {
+    display: flex;
+    justify-content: space-between;
 
-    h3 {
-      margin: 0 0 10px;
+    .leftColumn,
+    .rightColumn {
+      display: flex;
+      width: 50%;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .leftColumn {
+      flex-direction: column;
+    }
+
+    .rightColumn {
+      justify-content: end;
+    }
+
+
+    .users {
       display: flex;
       gap: 10px;
+      list-style: none;
+      padding: 0;
 
       li {
         display: flex;
@@ -89,39 +104,54 @@
 
         img {
           border-radius: 50%;
-          background-color: gray;
         }
       }
     }
   }
 
-  .description {
-    margin-bottom: 20px;
-  }
 
-  .daysToComplete {
-    margin-bottom: 20px;
-    font-size: 1rem;
-  }
-
-  .stack {
-    ul {
+  .stackSection {
+    .stackList {
       list-style: none;
-      padding: 0;
-      margin: 0;
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-      li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px;
+    .stackItem {
+      display: flex;
+      align-items: center;
 
-        .circle {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          margin-right: 10px;
-        }
+      .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 10px;
       }
     }
+  }
+
+  .buttonContainer {
+    margin: 0 auto;
+    width: 300px;
+  }
+
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #888;
   }
 }

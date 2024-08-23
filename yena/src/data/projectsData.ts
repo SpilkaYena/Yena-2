@@ -1,5 +1,24 @@
 import ProfileUrl from '../../public/img/profile-img.png';
 
+import { stackColors, Stack } from '@/data/stacksData';
+
+interface User {
+    id: number;
+    name: string;
+    avatar: string;
+}
+
+export interface Project {
+    id: number;
+    name: string;
+    status: string;
+    description: string;
+    users: User[];
+    daysToComplete: number;
+    stack: Stack[];
+    color: string;
+}
+
 export const projectsData = [
     {
         id: 1,
@@ -137,7 +156,7 @@ export const projectsData = [
             { id: 3, name: "User 3", avatar: ProfileUrl },
         ],
         daysToComplete: 35,
-        stack: ["Python", "CSS", "JavaScript"],
+        stack: ["Python", "CSS", "JavaScript", "HTML", "CSS", "JavaScript"],
         color: "#3357FF",
     },
 ];

@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './DashboardItem.module.scss';
-
 import ProfilePicture from '../ProfilePicture/ProfilePicture';
+import { stackColors } from '@/data/stacksData';
 
-const DashboardItem = ({project}) => {
+const DashboardItem = ({ project }) => {
     const getStatusClass = (status) => {
         switch (status) {
             case 'Done':
@@ -34,7 +34,10 @@ const DashboardItem = ({project}) => {
             <div className={styles.dashboardElement}>
                 <div className={styles.users}>
                     {project.users.slice(0, 3).map(user => (
-                        <ProfilePicture key={user.id} src={user.avatar} alt={user.name} className={styles.userAvatar}/>
+                        <li key={user.id}>
+                            <ProfilePicture src={user.avatar} alt={user.name} className={styles.userAvatar}/>
+                            <span className={styles.tooltip}>{user.name}</span>
+                        </li>
                     ))}
                 </div>
             </div>
@@ -42,13 +45,20 @@ const DashboardItem = ({project}) => {
             <div className={styles.daysToComplete}>{project.daysToComplete} днів</div>
 
             <div className={styles.stack}>
-                {project.stack?.slice(0, 3).map((tag, index) => (
-                    <div key={index} className={styles.stackCircle}></div>
-                ))}
-                <span>Java, HTML, Pолтон, Мевена</span>
+                <div className={styles.stackCircles}>
+                    {project.stack?.map((tech, index) => (
+                        <div
+                            key={index}
+                            className={styles.stackCircle}
+                            style={{ backgroundColor: stackColors[tech] }}
+                        >
+                            <span className={styles.tooltip}>{tech}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            <br/>
+            <br />
         </div>
     );
 };
