@@ -1,0 +1,64 @@
+@import '@/styles/variables';
+
+.users {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 3px;
+      font-size: 0.5rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s;
+      z-index: 10;
+    }
+  }
+}
+
+.userAvatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #EDEDED;
+}
+
+
+@media (max-width: $mobile) {
+}
+
+@media (max-width: $tablet) {
+}
+
+@media (max-width: $desktop) {
+}
+
+@media (max-width: $large-desktop) {
+  .users {
+    gap: 5px;
+  }
+
+  .userAvatar {
+    width: 20px;
+    height: 20px;
+  }
+}

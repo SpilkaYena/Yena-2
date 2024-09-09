@@ -32,14 +32,9 @@ const MenuItems: React.FC<{ isOpen: boolean; lang: string; translations: any }> 
                             <div className={styles.icon}>
                                 {icon}
                             </div>
-                            <motion.span
-                                className={`${styles.text} ${!isOpen ? styles.textHidden : ''}`}
-                                initial={{opacity: 0, x: -20}}
-                                animate={{opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20}}
-                                transition={{duration: 0.3, delay: 0.2, ease: 'easeInOut'}}
-                            >
+                            <span className={`${styles.text} ${!isOpen ? styles.textHidden : ''}`}>
                                 {label}
-                            </motion.span>
+                            </span>
                         </a>
                     </Link>
                 </motion.div>

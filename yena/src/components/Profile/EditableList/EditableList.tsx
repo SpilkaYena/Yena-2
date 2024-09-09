@@ -1,9 +1,7 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
-
 import styles from './EditableList.module.scss';
-
 import { Trash, Add, Like1 } from 'iconic-react';
 
 interface EditableListProps {
@@ -20,8 +18,8 @@ const EditableList: React.FC<EditableListProps> = ({ title, items, onAdd, onRemo
     const handleAdd = () => {
         if (newItem.trim()) {
             onAdd(newItem);
-            setNewItem('');
-            setIsAdding(false);
+            setNewItem(''); // очищуємо поле після додавання
+            setIsAdding(false); // закриваємо поле для вводу
         }
     };
 
@@ -29,8 +27,11 @@ const EditableList: React.FC<EditableListProps> = ({ title, items, onAdd, onRemo
         <div className={styles.editableList}>
             <div className={styles.header}>
                 <h3>{title}</h3>
-                <button onClick={() => setIsAdding(true)}><Add /></button>
+                <button onClick={() => setIsAdding(true)} className={styles.addButton}>
+                    <Add />
+                </button>
             </div>
+
             {isAdding && (
                 <div className={styles.newItem}>
                     <input
@@ -39,14 +40,19 @@ const EditableList: React.FC<EditableListProps> = ({ title, items, onAdd, onRemo
                         onChange={(e) => setNewItem(e.target.value)}
                         placeholder="Enter new item"
                     />
-                    <button onClick={handleAdd}><Like1 /></button>
+                    <button onClick={handleAdd} className={styles.confirmButton}>
+                        <Like1 />
+                    </button>
                 </div>
             )}
-            <ul>
+
+            <ul className={styles.itemList}>
                 {items.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} className={styles.item}>
                         {item}
-                        <button onClick={() => onRemove(index)}><Trash /></button>
+                        <button onClick={() => onRemove(index)} className={styles.removeButton}>
+                            <Trash />
+                        </button>
                     </li>
                 ))}
             </ul>

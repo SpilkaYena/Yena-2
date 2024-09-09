@@ -15,7 +15,6 @@
   box-sizing: border-box;
 
 
-
   .nav {
     outline: 1px solid #EDEDED;
     box-sizing: border-box;
@@ -28,4 +27,17 @@
   }
 }
 
+@media (max-width: $mobile) {
+}
 
+@media (max-width: $tablet) {
+}
+
+@media (max-width: $desktop) {
+}
+
+@media (max-width: $large-desktop) {
+  .sidebar {
+  }
+
+}

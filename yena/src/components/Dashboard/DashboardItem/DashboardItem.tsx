@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './DashboardItem.module.scss';
 import ProfilePicture from '../ProfilePicture/ProfilePicture';
 import { stackColors } from '@/data/stacksData';
+import styles from './DashboardItem.module.scss';
+
 
 const DashboardItem = ({ project }) => {
     const getStatusClass = (status) => {

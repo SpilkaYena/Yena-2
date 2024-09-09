@@ -53,14 +53,9 @@ const Projects: React.FC<ProjectsProps> = ({ isOpen, projects }) => {
                 >
                     <ArrowDown2 />
                 </motion.div>
-                <motion.h2
-                    className={`${!isOpen ? styles.textHidden : ''}`}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20 }}
-                    transition={{ duration: 0.3, delay: 0.3, ease: 'easeInOut' }}
-                >
+                <h2 className={`${!isOpen ? styles.textHidden : ''}`}>
                     Projects
-                </motion.h2>
+                </h2>
             </motion.div>
 
             {isProjectsVisible && (

@@ -99,10 +99,12 @@
       display: flex;
       align-items: center;
       background-color: #000;
+      width: 200px;
+      justify-content: center;
       color: #fff;
       border: none;
       border-radius: 5px;
-      padding: 10px 20px;
+      padding: 15px 20px;
       cursor: pointer;
       font-size: 1rem;
       transition: background-color 0.3s;
@@ -112,4 +114,18 @@
 
 .textHidden {
   opacity: 0;
+}
+
+
+@media (max-width: $mobile) {
+}
+
+@media (max-width: $tablet) {
+}
+
+@media (max-width: $desktop) {
+}
+
+@media (max-width: $large-desktop) {
+
 }

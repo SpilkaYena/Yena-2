@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import { motion } from 'framer-motion';
 import { ProfileRemove } from 'iconic-react';
 import styles from './Profile.module.scss';
@@ -41,15 +41,17 @@ const Profile: React.FC<ProfileProps> = ({ name, status, imageUrl, userStatus, i
                             {status}
                         </p>
                     </div>
-                    <div className={styles.profileExitWrapper}>
-                        <button className={styles.logoutButton} onClick={() => signOut({ callbackUrl: '/' })}>
-                            <ProfileRemove variant="Outline" />
-                        </button>
-                    </div>
+                    {isOpen && (
+                        <div className={styles.profileExitWrapper}>
+                            <button className={styles.logoutButton} onClick={() => signOut({ callbackUrl: '/' })}>
+                                <ProfileRemove variant="Outline" />
+                            </button>
+                        </div>
+                    )}
                 </>
             ) : (
                 <div className={styles.profileEnterWrapper}>
-
+                    <Link href={'/auth'} className={styles.loginButton}>Sign in</Link>
                 </div>
             )}
         </div>

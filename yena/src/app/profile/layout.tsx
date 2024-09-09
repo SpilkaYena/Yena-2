@@ -3,10 +3,10 @@ import { Providers } from "@/components/Providers";
 import "../globalStyles/globals.scss";
 
 export const metadata: Metadata = {
-    title: "Yena Pet gang",
+    title: "Profile",
     description: "",
     openGraph: {
-        title: "Yena Pet gang",
+        title: "Profile",
         description: "",
         type: "website",
         siteName: "Yena",

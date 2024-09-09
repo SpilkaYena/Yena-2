@@ -11,3 +11,25 @@
     font-size: 0.875rem;
   }
 }
+
+
+@media (max-width: $mobile) {
+}
+
+@media (max-width: $tablet) {
+  .filterBar {
+
+    input {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .filterBar {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: $large-desktop) {
+}

@@ -6,7 +6,7 @@ import FilterBar from './FilterBar/FilterBar';
 import { projectsData } from '@/data/projectsData';
 import styles from './Dashboard.module.scss';
 
-const Dashboard: React.FC<{ sidebarWidth: number }> = () => {
+const Dashboard = () => {
     const [filteredData, setFilteredData] = useState(projectsData);
 
 

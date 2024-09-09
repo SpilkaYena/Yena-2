@@ -1,3 +1,5 @@
+@import '@/styles/variables';
+
 .menuList {
   list-style: none;
   padding: 0;
@@ -32,4 +34,17 @@
 
 .textHidden {
   display: none;
+}
+
+@media (max-width: $mobile) {
+}
+
+@media (max-width: $tablet) {
+}
+
+@media (max-width: $desktop) {
+}
+
+@media (max-width: $large-desktop) {
+
 }

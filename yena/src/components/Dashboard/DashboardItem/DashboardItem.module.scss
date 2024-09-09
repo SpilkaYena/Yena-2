@@ -1,4 +1,7 @@
 @import '@/styles/variables';
+@import 'User.module';
+@import 'Stack.module';
+
 
 .dashboardContainer {
   width: 100%;
@@ -27,7 +30,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin: auto;
-  padding: 25px;
+  padding: 15px;
 }
 
 .dashboardElement {
@@ -40,7 +43,7 @@
   display: inline-block;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 0.9em;
+  font-size: 0.875rem;
   font-weight: $font-weight-regular;
 }
 
@@ -64,135 +67,63 @@
   color: #949792;
 }
 
-.users {
-  display: flex;
-  gap: 10px;
 
-  li {
-    display: flex;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
 
-    &:hover .tooltip {
-      opacity: 1;
-      visibility: visible;
+@media (max-width: $mobile) {
+}
+
+@media (max-width: $tablet) {
+
+  .status {
+    font-size: 0.625rem;
+    padding: 3px 5px;
+  }
+
+  .dashboardItem {
+    font-size: 0.625rem;
+
+    .projectName,
+    .daysToComplete {
+      padding: 15px;
     }
-
-    .tooltip {
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      color: #fff;
-      padding: 5px;
-      border-radius: 3px;
-      font-size: 0.75rem;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s;
-      z-index: 10;
+    .projectDescription {
+      display: none;
     }
+  }
+
+  .dashboardElement {
+    padding: 20px 0;
+  }
+
+  .daysToComplete {
+    width: 100px;
   }
 }
 
-.userAvatar {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: #EDEDED;
+@media (max-width: $desktop) {
 }
 
-.stack {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
-}
-
-.stackCircles {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0;
-  padding-right: 50px;
-
-}
-
-.stackCircle {
-  width: 15px;
-  height: 15px;
-  margin: auto;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  background-color: #000;
-  position: absolute;
-  cursor: pointer;
-  z-index: 1;
-
-  .tooltip {
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    background: #333;
-    padding: 5px;
-    border-radius: 3px;
+@media (max-width: $large-desktop) {
+  .status {
     font-size: 0.75rem;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s;
-    z-index: 40;
+    padding: 3px 5px;
   }
 
-  &:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
+  .dashboardItem {
+    font-size: 0.875rem;
+
+    .projectName,
+    .projectDescription,
+    .daysToComplete {
+      padding: 15px;
+    }
+  }
+
+  .dashboardElement {
+    padding: 20px 0;
+  }
+
+  .daysToComplete {
+    width: 100px;
   }
 }
-
-.stackCircle:nth-child(1) {
-  left: 0;
-  transform: translateX(-50%);
-  z-index: 7;
-}
-
-.stackCircle:nth-child(2) {
-  left: 10px;
-  transform: translateX(-50%);
-  z-index: 6;
-}
-
-.stackCircle:nth-child(3) {
-  left: 20px;
-  transform: translateX(-50%);
-  z-index: 5;
-}
-
-.stackCircle:nth-child(4) {
-  left: 30px;
-  transform: translateX(-50%);
-  z-index: 4;
-}
-.stackCircle:nth-child(5) {
-  left: 40px;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
-.stackCircle:nth-child(6) {
-  left: 50px;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.stackCircle:nth-child(7) {
-  left: 60px;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-

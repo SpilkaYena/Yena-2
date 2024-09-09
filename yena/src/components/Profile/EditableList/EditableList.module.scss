@@ -1,3 +1,5 @@
+@import '@/styles/variables';
+
 .editableList {
   width: 50%;
   padding-right: 25px;
@@ -6,8 +8,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-weight: $font-weight-regular;
+    font-size: 1rem;
 
     h3 {
       margin: 0;

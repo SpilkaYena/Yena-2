@@ -1,0 +1,152 @@
+@import '@/styles/variables';
+
+.centeredDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  padding: 25px;
+  gap: 25px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid #EDEDED;
+  box-shadow: 0 5px 55px rgba(0, 0, 0, 0.3);
+
+  .buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 350px;
+    font-size: 1rem;
+  }
+}
+
+.welcomeText {
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+
+.placeholderText {
+  font-size: 1rem;
+}
+
+.agreementText {
+  font-size: 0.75rem;
+  color: #000;
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+}
+
+
+@media (max-width: $large-desktop) {
+  .welcomeText {
+    font-size: 1.25rem;
+  }
+
+  .placeholderText {
+    font-size: 0.875rem;
+  }
+
+  .agreementText {
+    font-size: 0.625rem;
+  }
+
+  .centeredDiv {
+    max-width: 450px;
+
+    .buttonWrapper {
+      width: 325px;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .welcomeText {
+    font-size: 1.125rem;
+  }
+
+  .placeholderText {
+    font-size: 0.75rem;
+  }
+
+  .agreementText {
+    font-size: 0.575rem;
+  }
+
+  .centeredDiv {
+    max-width: 400px;
+
+    .buttonWrapper {
+      width: 275px;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .welcomeText {
+    font-size: 1rem;
+  }
+
+  .placeholderText {
+    font-size: 0.625rem;
+  }
+
+  .agreementText {
+    font-size: 0.525rem;
+  }
+
+  .centeredDiv {
+    max-width: 375px;
+    gap: 15px;
+
+    .buttonWrapper {
+      width: 250px;
+      gap: 15px;
+      font-size: 0.625rem;
+
+      button {
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .welcomeText {
+    font-size: 1rem;
+  }
+
+  .placeholderText {
+    font-size: 0.625rem;
+  }
+
+  .agreementText {
+    font-size: 0.525rem;
+  }
+
+  .centeredDiv {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    .buttonWrapper {
+      width: 100%;
+      max-width: 200px;
+      font-size: 0.625rem;
+
+      button {
+        border-radius: 7px;
+        padding: 5px 10px;
+      }
+    }
+  }
+}

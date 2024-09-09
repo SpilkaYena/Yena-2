@@ -1,3 +1,5 @@
+@import '@/styles/variables';
+
 .loadingContainer {
   display: flex;
   align-items: center;
@@ -15,4 +17,29 @@
 @keyframes fadeInOut {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
+}
+
+
+@media (max-width: $mobile) {
+  .loadingText {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: $tablet) {
+  .loadingText {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: $desktop) {
+  .loadingText {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: $large-desktop) {
+  .loadingText {
+    font-size: 1rem;
+  }
 }
